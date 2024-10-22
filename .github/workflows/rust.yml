@@ -25,5 +25,5 @@ jobs:
       with:
         name: cube simulator 3D
         path: |
-          target/release/cube_simulator.exe
+          cube_simulator.exe
           assets
