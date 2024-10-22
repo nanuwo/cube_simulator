@@ -1,0 +1,3 @@
+# Use faster LLD linker for Windows optimisation
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe"
