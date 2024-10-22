@@ -17,10 +17,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: cargo build --verbose --release 
+      run: cargo build --verbose --release
+    - name: Copy file
+      run: move target/release/cube_simulator.exe cube_simulator.exe
     - uses: actions/upload-artifact@v4
       with:
-        name: my-artifact
+        name: cube simulator 3D
         path: |
           target/release/cube_simulator.exe
           assets
