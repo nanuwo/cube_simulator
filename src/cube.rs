@@ -68,13 +68,6 @@ fn setup(mut commands: Commands, mut meshes: ResMut<Assets<Mesh>>, mut materials
     ));
     commands.spawn((
         PointLightBundle {
-            transform: Transform::from_xyz(0.0, 4.0, 0.0),
-            ..default()
-        },
-        GameEntities
-    ));
-    commands.spawn((
-        PointLightBundle {
             transform: Transform::from_xyz(0.0, -4.0, 0.0),
             point_light: PointLight::default(),
             ..default()
