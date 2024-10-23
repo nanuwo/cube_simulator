@@ -68,7 +68,7 @@ fn setup(
     ));
     commands.spawn((
         PbrBundle {
-            mesh: meshes.add(Plane3d::new(Vec3::NEG_Y, Vec2::splat(500.0))),
+            mesh: meshes.add(Plane3d::new(Vec3::NEG_Y, Vec2::splat(5000.0))),
             material: materials.add(Color::from(PINK)),
             ..default()
         },
