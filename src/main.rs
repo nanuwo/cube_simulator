@@ -4,7 +4,7 @@ use crate::cube::GamePlugin;
 use crate::main_menu::MainMenuPlugin;
 use bevy::audio::Volume;
 use bevy::prelude::*;
-use bevy::window::{PrimaryWindow, WindowMode};
+use bevy::window::WindowMode;
 
 mod hello_plugin;
 mod cube;
@@ -29,21 +29,11 @@ fn main() {
         }))
         .add_plugins((GamePlugin, MainMenuPlugin))
         .add_systems(Startup, funny_doom_music)
-        .add_systems(Update, global_hotkeys)
         .init_state::<GameState>()
         .run();
 }
 
-fn global_hotkeys(keys: Res<ButtonInput<KeyCode>>, mut window_query: Query<&mut Window, With<PrimaryWindow>>) {
-    if keys.just_pressed(KeyCode::F11) {
-        let mut window = window_query.single_mut();
-        window.mode = match window.mode {
-            WindowMode::Windowed => WindowMode::BorderlessFullscreen,
-            WindowMode::BorderlessFullscreen => WindowMode::Windowed,
-            _ => window.mode
-        }
-    }
-}
+
 
 fn funny_doom_music(asset_server: Res<AssetServer>, mut commands: Commands) {
     commands.spawn(AudioBundle {

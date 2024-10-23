@@ -11,10 +11,6 @@ impl Plugin for HelloPlugin {
     }
 }
 
-fn hello_world() {
-    eprintln!("GRAAARGH! HELLO WORLDS!!!!!!!!!!!")
-}
-
 #[derive(Component)]
 struct Person;
 
